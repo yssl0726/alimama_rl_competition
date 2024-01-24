@@ -63,8 +63,7 @@ def normalize_reward(training_data):
         归一化奖励的Series。
     """
     reward_range = training_data["reward"].max() - training_data["reward"].min()
-    training_data["normalize_reward"] = (
-                                                training_data["reward"] - training_data["reward"].min()) / reward_range
+    training_data["normalize_reward"] = (training_data["reward"] - training_data["reward"].min()) / reward_range
     return training_data["normalize_reward"]
 
 

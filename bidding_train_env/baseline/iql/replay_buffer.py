@@ -24,10 +24,16 @@ class ReplayBuffer:
         """随机抽取一批经验"""
         tem = random.sample(self.memory, batch_size)
         states, actions, rewards, next_states, dones = zip(*tem)
-        states, actions, rewards, next_states, dones = np.stack(states), np.stack(actions), np.stack(rewards), np.stack(
-            next_states), np.stack(dones)
-        states, actions, rewards, next_states, dones = torch.FloatTensor(states), torch.FloatTensor(
-            actions), torch.FloatTensor(rewards), torch.FloatTensor(next_states), torch.FloatTensor(dones)
+        states, actions, rewards, next_states, dones = np.stack(states), \
+                                                       np.stack(actions), \
+                                                       np.stack(rewards), \
+                                                       np.stack(next_states), \
+                                                       np.stack(dones)
+        states, actions, rewards, next_states, dones = torch.FloatTensor(states), \
+                                                       torch.FloatTensor(actions), \
+                                                       torch.FloatTensor(rewards), \
+                                                       torch.FloatTensor(next_states), \
+                                                       torch.FloatTensor(dones)
         return states, actions, rewards, next_states, dones
 
     def __len__(self):
