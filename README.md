@@ -12,6 +12,7 @@
 训练数据地址：https://alimama-competition.oss-cn-zhangjiakou.aliyuncs.com/simul_bidding_env/data/log.csv
 在根目录下，创建data文件夹，将训练数据log.csv放入data文件夹中。
 运行脚本，实现将原始数据和训练数据以pickle格式保存，以提高数据读取速度。
+注: pycharm终端里面的根目录需要是alimama_rl_competition才可以，比如：PS E:\xx\xxx\alimama_rl_competition>
 ```
 python bidding_train_env/dataloader/iql_dataloader.py
 ```
